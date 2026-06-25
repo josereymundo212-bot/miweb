@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saludo Django</title>
+</head>
+<body>
+
+    <h1>Mi página Django</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre">
+
+        <br><br>
+
+        <button type="submit" name="accion" value="saludar">
+            Saludar
+        </button>
+
+        <button type="submit" name="accion" value="limpiar">
+            Limpiar
+        </button>
+
+    </form>
+
+    <hr>
+
+    {% if mensaje %}
+        <h2>{{ mensaje }}</h2>
+    {% endif %}
+
+</body>
+</html>
